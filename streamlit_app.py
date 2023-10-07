@@ -36,9 +36,6 @@ streamlit.dataframe(fruityvice_normalized)
 
 import snowflake.connector
 
-streamlit.text(streamlit.secrets['snowflake']) # Added this line for debugging
-streamlit.text(type(streamlit.secrets))        # Added this line for debugging
-
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
